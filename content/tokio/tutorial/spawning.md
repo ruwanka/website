@@ -4,12 +4,20 @@ title: "Spawning"
 
 We are going to shift gears and start working on the Redis server.
 
-First, move the client `SET`/`GET` code from the previous section to an example
+First, move the client `SET`/`GET` code from the previous section to an [example](https://doc.rust-lang.org/cargo/reference/cargo-targets.html#examples)
 file. This way, we can run it against our server.
 
 ```bash
 $ mkdir -p examples
 $ mv src/main.rs examples/hello-redis.rs
+```
+
+Then add following section to `Cargo.toml` to run it alongside with server we are developing as an example.
+
+```toml
+[[example]]
+name = "hello-redis"
+path = "examples/hello-redis.rs"
 ```
 
 Then create a new, empty `src/main.rs` and continue.
